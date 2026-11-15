@@ -86,3 +86,9 @@ pip install -r requirements.txt
 - pip freeze lista también las dependencias de mis dependencias.
 - En Git Bash se activa con source venv/Scripts/activate; el .ps1 es para PowerShell.
 - En bash, los corchetes van entre comillas.
+
+### Chuleta
+- Desde fastapi importamos FastApi.
+- Creamos una variable app, donde guardaremos nuestra API
+- Definimos la ruta, decoramos, creamos la funcion y esto lo guardamos en app.
+- Por ultimo arrancamos con uvicorn
