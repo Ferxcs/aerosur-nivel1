@@ -12,3 +12,4 @@ INSERT INTO reservas (vuelo_id, documento)
 VALUES ('VUELO-001', '12345678')
 
 SELECT * FROM reservas;
+

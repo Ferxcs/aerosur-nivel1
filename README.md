@@ -22,8 +22,8 @@ docker exec -i postgres-dev psql -U postgres -d aerosur_n1 < db/schema.sql
 
 ## Checkpoints
 
-- [x] 1. Base de datos
-- [ ] 2. Entorno Python
+- [X] 1. Base de datos
+- [X] 2. Entorno Python
 - [ ] 3. API mínima
 - [ ] 4. Leer vuelos
 - [ ] 5. Crear reserva (transacción)
@@ -68,3 +68,21 @@ Definí en `db/schema.sql` dos tablas, `vuelos` y `reservas`, y un vuelo de prue
   tablas: `vuelos` (la ruta) y `salidas` (fecha y asientos de cada día). Es una
   simplificación intencional para este nivel.
 - **Llave natural:** el código del vuelo es la llave primaria.
+
+
+## Checkpoint 2: Entorno Python
+## Cómo preparar el entorno Python
+
+```bash
+python -m venv venv
+source venv/Scripts/activate      # Git Bash
+# .\venv\Scripts\Activate.ps1     # PowerShell
+pip install -r requirements.txt
+```
+
+### Qué aprendí
+
+- El venv no va al repo; requirements.txt es su receta, igual que schema.sql lo es de la base.
+- pip freeze lista también las dependencias de mis dependencias.
+- En Git Bash se activa con source venv/Scripts/activate; el .ps1 es para PowerShell.
+- En bash, los corchetes van entre comillas.
