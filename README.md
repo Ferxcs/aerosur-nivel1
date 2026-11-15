@@ -87,6 +87,8 @@ pip install -r requirements.txt
 - En Git Bash se activa con source venv/Scripts/activate; el .ps1 es para PowerShell.
 - En bash, los corchetes van entre comillas.
 
+
+## Checkpoint 3: Api Mínima
 ### Chuleta
 - Desde fastapi importamos FastApi.
 - Creamos una variable app, donde guardaremos nuestra API
