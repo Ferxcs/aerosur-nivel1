@@ -24,8 +24,8 @@ docker exec -i postgres-dev psql -U postgres -d aerosur_n1 < db/schema.sql
 
 - [X] 1. Base de datos
 - [X] 2. Entorno Python
-- [ ] 3. API mínima
-- [ ] 4. Leer vuelos
+- [X] 3. API mínima
+- [X] 4. Leer vuelos
 - [ ] 5. Crear reserva (transacción)
 - [ ] 6. Consultar reserva
 
@@ -94,3 +94,19 @@ pip install -r requirements.txt
 - Creamos una variable app, donde guardaremos nuestra API
 - Definimos la ruta, decoramos, creamos la funcion y esto lo guardamos en app.
 - Por ultimo arrancamos con uvicorn
+
+## Checkpoint 4: Leer vuelos
+
+### Qué Hice
+
+Bueno en esta checkpoint “creé una función y la decoré con @app.get para asignarle la ruta /vuelos, esta función nos permite hacer un SELECT y por eso podemos ver nuestra tabla vuelos
+
+### Qué aprendí
+
+Guardamos los datos sensibles en el archivo .env para poder leerlos y cargarlos como variables de entorno.
+
+Por qué lo hicimos así? pues justamente para el momento de hacer push estas credenciales o datos sensibles no esten en el github
+- pero cometi un error, se subió mi .vscode y ahi esta todo :p xd
+
+en fin con with(cierra la conexión sola aunque algo falle)
+
