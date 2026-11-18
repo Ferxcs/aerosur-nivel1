@@ -13,3 +13,5 @@ VALUES ('VUELO-001', '12345678')
 
 SELECT * FROM reservas;
 
+UPDATE vuelos SET disponibles = 10 WHERE vuelo_id = 'VUELO-001';
+SELECT * FROM vuelos;

@@ -26,7 +26,7 @@ docker exec -i postgres-dev psql -U postgres -d aerosur_n1 < db/schema.sql
 - [X] 2. Entorno Python
 - [X] 3. API mínima
 - [X] 4. Leer vuelos
-- [ ] 5. Crear reserva (transacción)
+- [X] 5. Crear reserva (transacción)
 - [ ] 6. Consultar reserva
 
 ## Checkpoint 1: Base de datos
@@ -110,3 +110,7 @@ Por qué lo hicimos así? pues justamente para el momento de hacer push estas cr
 
 en fin con with(cierra la conexión sola aunque algo falle)
 
+## Checkpoint 5: Crear reserva (transacción)
+
+- POST/reservas descuenta el asiento y crea la reserva en una transacción.
+- Responde 409 si no hay asientos

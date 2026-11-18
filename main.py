@@ -13,7 +13,7 @@ class NuevaReserva(BaseModel):
 load_dotenv()
 CONEXION = os.getenv("DATABASE_URL")
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
@@ -36,6 +36,15 @@ def listar_vuelos():
 def reservar_vuelos(datos: NuevaReserva):
     with psycopg.connect(CONEXION, row_factory=dict_row) as conexion:
         with conexion.cursor() as cursor:
+
+            cursor.execute(
+                "UPDATE vuelos SET disponibles = disponibles - 1 WHERE vuelo_id = (%s) AND disponibles > 0;",
+                (datos.vuelo_id,),
+            )
+
+            if cursor.rowcount == 0:
+                raise HTTPException(status_code=409, detail="No hay asientos disponibles")
+            
             cursor.execute(
                 "INSERT INTO reservas (vuelo_id, documento) VALUES (%s, %s) RETURNING *",
                 (datos.vuelo_id, datos.documento),
